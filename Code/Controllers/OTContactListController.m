@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.apiMan loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
+    [self.apiMan loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
         NSLog(@"%@",contacts);
     }];
     // Uncomment the following line to preserve selection between presentations.
