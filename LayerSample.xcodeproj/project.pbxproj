@@ -48,6 +48,8 @@
 		259A57751950EB83000E27B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259A57701950EB83000E27B0 /* Images.xcassets */; };
 		259A577E1950EB92000E27B0 /* KIFUITestActor+LSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 259A577A1950EB92000E27B0 /* KIFUITestActor+LSAdditions.m */; };
 		9842E4DC1E04484898FEF487 /* libPods-LayerSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBE2D1F4815451CAAD12DF4 /* libPods-LayerSampleTests.a */; };
+		B6658DCF198D783E0058E37B /* OTContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6658DCA198D783E0058E37B /* OTContactListController.m */; };
+		B6658DD0198D783E0058E37B /* OTContactListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6658DCB198D783E0058E37B /* OTContactListController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,9 @@
 		53480A235A364E9AAAB2DC78 /* Pods-LayerSampleTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LayerSampleTests.xcconfig"; path = "Pods/Pods-LayerSampleTests.xcconfig"; sourceTree = "<group>"; };
 		931E36A3415C497CA3681E7F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A939C393B9254AF5B6B4FB43 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B6658DC9198D783E0058E37B /* OTContactListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTContactListController.h; sourceTree = "<group>"; };
+		B6658DCA198D783E0058E37B /* OTContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTContactListController.m; sourceTree = "<group>"; };
+		B6658DCB198D783E0058E37B /* OTContactListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTContactListController.xib; sourceTree = "<group>"; };
 		FBBE2D1F4815451CAAD12DF4 /* libPods-LayerSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LayerSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -223,6 +228,9 @@
 		259A57121950EB76000E27B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6658DC9198D783E0058E37B /* OTContactListController.h */,
+				B6658DCA198D783E0058E37B /* OTContactListController.m */,
+				B6658DCB198D783E0058E37B /* OTContactListController.xib */,
 				0A96F6C81989AD1100A55C08 /* LSApplicationController.h */,
 				0A96F6C91989AD1100A55C08 /* LSApplicationController.m */,
 				25203F83195F5FC800E41FA1 /* LSHTTPResponseSerializer.h */,
@@ -392,6 +400,7 @@
 				259A57751950EB83000E27B0 /* Images.xcassets in Resources */,
 				0ABEFFAF196B7686006FFFF3 /* logo@2x.png in Resources */,
 				259A57731950EB83000E27B0 /* Main.storyboard in Resources */,
+				B6658DD0198D783E0058E37B /* OTContactListController.xib in Resources */,
 				0AD767741963157600582755 /* camera@2x.png in Resources */,
 				259A57741950EB83000E27B0 /* InfoPlist.strings in Resources */,
 			);
@@ -502,6 +511,7 @@
 				259A57611950EB76000E27B0 /* LSUser.m in Sources */,
 				259A576A1950EB76000E27B0 /* LSUIConstants.m in Sources */,
 				259A57591950EB76000E27B0 /* LSRegistrationViewController.m in Sources */,
+				B6658DCF198D783E0058E37B /* OTContactListController.m in Sources */,
 				0AD0B75B198D4D3E00D5F8C3 /* LSAuthenticatedViewController.m in Sources */,
 				0AD767721963104200582755 /* LSUtilities.m in Sources */,
 				25918B9A195F960500D0FB1B /* LSSession.m in Sources */,
