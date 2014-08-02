@@ -9,7 +9,7 @@
 #import "LSAuthenticatedViewController.h"
 #import "LSPersistenceManager.h"
 #import "OTContactListController.h"
-#import "OTChatView.h"
+//import "OTChatView.h"
 
 @interface LSAuthenticatedViewController ()
 
@@ -33,7 +33,7 @@
     UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     self.navigationItem.leftBarButtonItem = logoutButton;
     
-    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addDummyConversation)];
+    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addNewConversation)];
     self.navigationItem.rightBarButtonItem = plusIcon;
     NSSet *convs = [self.layerClient conversationsForIdentifiers:nil];
     NSLog(@"CONVERSATIONS: %@", convs);
