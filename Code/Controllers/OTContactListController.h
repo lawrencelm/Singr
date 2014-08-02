@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LayerKit/LYRClient.h>
 
 @interface OTContactListController : UITableViewController
-@property (nonatomic, weak) *NSSet contactList;
+@property (nonatomic, weak) NSSet *contactList;
+@property (nonatomic, weak) LYRClient *layerClient;
 @end
