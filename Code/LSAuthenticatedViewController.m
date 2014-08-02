@@ -46,7 +46,7 @@
 }
 - (void)addNewConversation
 {
-    OTContactListController *contactView = [[OTContactListController alloc] init];
+    OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager];
     [self.navigationController presentViewController:contactView animated:YES completion:nil];
     //[self addDummyConversation];
 }
