@@ -33,10 +33,6 @@
     
     UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addNewConversation)];
     self.navigationItem.rightBarButtonItem = plusIcon;
-    
-    [self.APIManager loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
-        NSLog(@"%@", contacts);
-    }];
 }
 
 - (void)logout
@@ -47,6 +43,14 @@
 }
 - (void)addNewConversation
 {
+    [self addDummyConversation];
+}
+- (void)addDummyConversation
+{
+    LYRConversation *dummyConv = [LYRConversation conversationWithParticipants:[NSArray array]];
+    [self.APIManager loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
+        [self.layerClient addParticipants:[[contacts allObjects] objectAtIndex:0] toConversation:dummyConv error:nil];
+    }];
     
 }
 

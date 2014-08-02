@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0EAE86ED-FBE2-4273-81A8-EF824B79C171</string>
+	<string>E34EB83A-2910-4469-9FDD-917FFEE8D2C9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>LayerSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>A43E87E8-8143-4617-9FE6-C152F797B614</key>
-		<string>https://github.com/layerhq/layer-hack-ios.git</string>
+		<key>27B8592E-C6CD-4E70-BEFF-593702B8A8F2</key>
+		<string>https://github.com/lawrencelm/Singr.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LayerSample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>A43E87E8-8143-4617-9FE6-C152F797B614</key>
+		<key>27B8592E-C6CD-4E70-BEFF-593702B8A8F2</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/layerhq/layer-hack-ios.git</string>
+	<string>https://github.com/lawrencelm/Singr.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>A43E87E8-8143-4617-9FE6-C152F797B614</string>
+	<string>27B8592E-C6CD-4E70-BEFF-593702B8A8F2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>A43E87E8-8143-4617-9FE6-C152F797B614</string>
+			<string>27B8592E-C6CD-4E70-BEFF-593702B8A8F2</string>
 			<key>IDESourceControlWCCName</key>
-			<string>layer-hack-ios</string>
+			<string>Singr</string>
 		</dict>
 	</array>
 </dict>
