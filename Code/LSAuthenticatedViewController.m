@@ -49,23 +49,8 @@
 {
     [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
         OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager contacts:contacts];
-        [self.navigationController presentViewController:contactView animated:YES completion:nil];
+        [self.navigationController pushViewController:contactView animated:YES];
     }];
 }
-/*- (void)addDummyConversation
-{
-    [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
-        NSDictionary *userID = [[contacts objectAtIndex:0] objectForKey:@"id"];
-        NSLog(@"USER_ID: %@", userID);
-        LYRConversation *dummyConv = [LYRConversation conversationWithParticipants:@[userID]];
-        NSLog(@"Created conversation!");
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"];
-        NSData *myData = [NSData dataWithContentsOfFile:filePath];
-        NSDictionary *lyrics = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
-        OTChatView *chatView = [[OTChatView alloc] initWithConversation:dummyConv lyrics:lyrics];
-        [self.navigationController pushViewController:chatView animated:YES];
-    }];
-    
-}*/
 
 @end

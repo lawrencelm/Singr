@@ -7,6 +7,7 @@
 //
 
 #import "OTContactListController.h"
+#import "OTChatView.h"
 
 
 
@@ -112,7 +113,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *selectedUser = [self.contactList objectAtIndex:indexPath.row];
-    
+    LYRConversation *newConversation = [LYRConversation conversationWithParticipants:@[[selectedUser objectForKey:@"id"]]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"];
+    NSData *myData = [NSData dataWithContentsOfFile:filePath];
+    NSDictionary *lyrics = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
+    OTChatView *chatView = [[OTChatView alloc] initWithConversation:newConversation lyrics:lyrics];
+    [self.navigationController pushViewController:chatView animated:YES];
 }
 
 
