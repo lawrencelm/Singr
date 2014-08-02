@@ -19,9 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.apiMan loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
-        NSLog(@"%@",contacts);
-    }];
+    NSLog(@"abcdef%@",self.contactList);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,19 +27,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan{
+
+-(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan contacts:(NSArray *)contacts{
     self = [super init];
     self.LayerClient = client;
     self.apiMan = lsAPIMan;
+    self.contactList = [NSArray arrayWithArray:contacts];
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated{
-}
-
-
-
-     
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -59,13 +53,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    NSLog(@"%@",self.contactList);
     return [self.contactList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [[OTContactsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    NSDictionary *user = [self.contactList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [user valueForKey:@"first_name"];
     return cell;
 }
 

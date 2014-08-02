@@ -47,10 +47,12 @@
 }
 - (void)addNewConversation
 {
-    OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager];
-    [self.navigationController presentViewController:contactView animated:YES completion:nil];
+    [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
+        OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager contacts:contacts];
+        [self.navigationController presentViewController:contactView animated:YES completion:nil];
+    }];
 }
-- (void)addDummyConversation
+/*- (void)addDummyConversation
 {
     [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
         NSDictionary *userID = [[contacts objectAtIndex:0] objectForKey:@"id"];
@@ -64,6 +66,6 @@
         [self.navigationController presentViewController:chatView animated:YES completion:nil];
     }];
     
-}
+}*/
 
 @end
