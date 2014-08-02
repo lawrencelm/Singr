@@ -14,5 +14,5 @@
 @property (nonatomic, weak) NSSet *contactList;
 @property (nonatomic, strong) LYRClient *layerClient;
 @property (nonatomic, strong) LSAPIManager *apiMan;
--(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan
+-(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan;
 @end
