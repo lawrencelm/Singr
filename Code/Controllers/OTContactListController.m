@@ -9,6 +9,7 @@
 #import "OTContactListController.h"
 
 
+
 @interface OTContactListController ()
 
 @end
@@ -18,7 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.apiMan loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
+        NSLog(@"%@",contacts);
+    }];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -26,12 +29,19 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(id)initWithLayerClient:(LYRClient*)client{
+-(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan{
     self = [super init];
     self.LayerClient = client;
+    self.apiMan = lsAPIMan;
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+}
+
+
+
+     
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -42,28 +52,23 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Retun the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.contactList count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
