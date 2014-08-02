@@ -15,4 +15,6 @@
 @property (nonatomic, strong) LSAPIManager *APIManager;
 
 @property (nonatomic, strong) LYRClient *layerClient;
+@property (nonatomic, strong) NSArray *contactList;
+
 @end

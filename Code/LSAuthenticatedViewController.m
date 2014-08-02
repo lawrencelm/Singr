@@ -9,7 +9,7 @@
 #import "LSAuthenticatedViewController.h"
 #import "LSPersistenceManager.h"
 #import "OTContactListController.h"
-#import "OTChatView.h"
+//import "OTChatView.h"
 
 @interface LSAuthenticatedViewController ()
 
@@ -33,7 +33,7 @@
     UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     self.navigationItem.leftBarButtonItem = logoutButton;
     
-    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addDummyConversation)];
+    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addNewConversation)];
     self.navigationItem.rightBarButtonItem = plusIcon;
     NSSet *convs = [self.layerClient conversationsForIdentifiers:nil];
     NSLog(@"CONVERSATIONS: %@", convs);
@@ -47,10 +47,12 @@
 }
 - (void)addNewConversation
 {
-    OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager];
-    [self.navigationController presentViewController:contactView animated:YES completion:nil];
+    [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
+        OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager contacts:contacts];
+        [self.navigationController presentViewController:contactView animated:YES completion:nil];
+    }];
 }
-- (void)addDummyConversation
+/*- (void)addDummyConversation
 {
     [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
         NSDictionary *userID = [[contacts objectAtIndex:0] objectForKey:@"id"];
@@ -64,6 +66,6 @@
         [self.navigationController pushViewController:chatView animated:YES];
     }];
     
-}
+}*/
 
 @end

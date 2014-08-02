@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <LayerKit/LYRClient.h>
 #import "LSAPIManager.h"
+#import "OTContactsCell.h"
 
 @interface OTContactListController : UITableViewController
-@property (nonatomic, weak) NSSet *contactList;
+@property (nonatomic, strong) NSArray *contactList;
 @property (nonatomic, strong) LYRClient *layerClient;
 @property (nonatomic, strong) LSAPIManager *apiMan;
--(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan;
+@property (weak, nonatomic) IBOutlet UIView *cell;
+-(id)initWithLayerClient:(LYRClient*)client apiManager:(LSAPIManager*)lsAPIMan contacts:(NSArray *)contacts;
 @end
