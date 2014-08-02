@@ -61,7 +61,7 @@
         NSData *myData = [NSData dataWithContentsOfFile:filePath];
         NSDictionary *lyrics = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
         OTChatView *chatView = [[OTChatView alloc] initWithConversation:dummyConv lyrics:lyrics];
-        [self.navigationController presentViewController:chatView animated:YES completion:nil];
+        [self.navigationController pushViewController:chatView animated:YES];
     }];
     
 }

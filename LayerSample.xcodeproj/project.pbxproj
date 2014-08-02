@@ -50,6 +50,9 @@
 		9842E4DC1E04484898FEF487 /* libPods-LayerSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBE2D1F4815451CAAD12DF4 /* libPods-LayerSampleTests.a */; };
 		B6658DCF198D783E0058E37B /* OTContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6658DCA198D783E0058E37B /* OTContactListController.m */; };
 		B6658DD0198D783E0058E37B /* OTContactListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6658DCB198D783E0058E37B /* OTContactListController.xib */; };
+		B6658DD5198D83770058E37B /* OTChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6658DD4198D83770058E37B /* OTChatView.m */; };
+		B6658DD8198D87720058E37B /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = B6658DD7198D87720058E37B /* test.json */; };
+		B6658DDB198D8D260058E37B /* LSLyricCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6658DDA198D8D260058E37B /* LSLyricCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +132,11 @@
 		B6658DC9198D783E0058E37B /* OTContactListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTContactListController.h; sourceTree = "<group>"; };
 		B6658DCA198D783E0058E37B /* OTContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTContactListController.m; sourceTree = "<group>"; };
 		B6658DCB198D783E0058E37B /* OTContactListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTContactListController.xib; sourceTree = "<group>"; };
+		B6658DD3198D83770058E37B /* OTChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTChatView.h; sourceTree = "<group>"; };
+		B6658DD4198D83770058E37B /* OTChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTChatView.m; sourceTree = "<group>"; };
+		B6658DD7198D87720058E37B /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		B6658DD9198D8D260058E37B /* LSLyricCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLyricCell.h; sourceTree = "<group>"; };
+		B6658DDA198D8D260058E37B /* LSLyricCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLyricCell.m; sourceTree = "<group>"; };
 		FBBE2D1F4815451CAAD12DF4 /* libPods-LayerSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LayerSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +178,7 @@
 		0A0C241A19477D8F00401B74 = {
 			isa = PBXGroup;
 			children = (
+				B6658DD6198D87490058E37B /* Lyrics */,
 				259A57111950EB76000E27B0 /* Code */,
 				0A0C242519477D8F00401B74 /* Frameworks */,
 				0A0C242419477D8F00401B74 /* Products */,
@@ -251,6 +260,10 @@
 				0AD767711963104200582755 /* LSUtilities.m */,
 				0AD0B759198D4D3E00D5F8C3 /* LSAuthenticatedViewController.h */,
 				0AD0B75A198D4D3E00D5F8C3 /* LSAuthenticatedViewController.m */,
+				B6658DD3198D83770058E37B /* OTChatView.h */,
+				B6658DD4198D83770058E37B /* OTChatView.m */,
+				B6658DD9198D8D260058E37B /* LSLyricCell.h */,
+				B6658DDA198D8D260058E37B /* LSLyricCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +315,14 @@
 				259A577B1950EB92000E27B0 /* LayerSampleTests-Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		B6658DD6198D87490058E37B /* Lyrics */ = {
+			isa = PBXGroup;
+			children = (
+				B6658DD7198D87720058E37B /* test.json */,
+			);
+			name = Lyrics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +423,7 @@
 				259A57731950EB83000E27B0 /* Main.storyboard in Resources */,
 				B6658DD0198D783E0058E37B /* OTContactListController.xib in Resources */,
 				0AD767741963157600582755 /* camera@2x.png in Resources */,
+				B6658DD8198D87720058E37B /* test.json in Resources */,
 				259A57741950EB83000E27B0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +522,7 @@
 				0A52D6011962219D0030A34A /* LSMessageCellPresenter.m in Sources */,
 				259A574F1950EB76000E27B0 /* LSAPIManager.m in Sources */,
 				259A57631950EB76000E27B0 /* LSButton.m in Sources */,
+				B6658DDB198D8D260058E37B /* LSLyricCell.m in Sources */,
 				259A57671950EB76000E27B0 /* LSInputTableViewCell.m in Sources */,
 				0A96F6CA1989AD1100A55C08 /* LSApplicationController.m in Sources */,
 				0A2324F51960DB8C00C1C98D /* LSConversationCellPresenter.m in Sources */,
@@ -509,6 +532,7 @@
 				259A575C1950EB76000E27B0 /* LSAppDelegate.m in Sources */,
 				259A57551950EB76000E27B0 /* LSLoginViewController.m in Sources */,
 				259A57611950EB76000E27B0 /* LSUser.m in Sources */,
+				B6658DD5198D83770058E37B /* OTChatView.m in Sources */,
 				259A576A1950EB76000E27B0 /* LSUIConstants.m in Sources */,
 				259A57591950EB76000E27B0 /* LSRegistrationViewController.m in Sources */,
 				B6658DCF198D783E0058E37B /* OTContactListController.m in Sources */,

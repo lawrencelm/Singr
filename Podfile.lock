@@ -1,10 +1,13 @@
 PODS:
-  - LayerKit (0.7.6)
+  - EZAudio (0.0.5)
+  - LayerKit (0.7.7)
 
 DEPENDENCIES:
+  - EZAudio (~> 0.0.5)
   - LayerKit
 
 SPEC CHECKSUMS:
-  LayerKit: d26eeef10bd1e24841745e6304b7e8b8c431ef01
+  EZAudio: 9510d4666c9d01a2151cdb01e71fb51f15ac9442
+  LayerKit: 51a7c05bcc80585d3ad6ce944fdad07ef514c050
 
 COCOAPODS: 0.33.1
