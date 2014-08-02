@@ -9,6 +9,7 @@
 #import "LSAuthenticatedViewController.h"
 #import "LSPersistenceManager.h"
 #import "OTContactListController.h"
+#import "OTChatView.h"
 
 @interface LSAuthenticatedViewController ()
 
@@ -32,10 +33,10 @@
     UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
     self.navigationItem.leftBarButtonItem = logoutButton;
     
-    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addNewConversation)];
+    UIBarButtonItem *plusIcon = [[UIBarButtonItem alloc] initWithTitle:@"New chat" style:UIBarButtonItemStylePlain target:self action:@selector(addDummyConversation)];
     self.navigationItem.rightBarButtonItem = plusIcon;
     NSSet *convs = [self.layerClient conversationsForIdentifiers:nil];
-    NSLog(@"%@", convs);
+    NSLog(@"CONVERSATIONS: %@", convs);
 }
 
 - (void)logout
@@ -48,13 +49,19 @@
 {
     OTContactListController *contactView = [[OTContactListController alloc] initWithLayerClient:self.layerClient apiManager:self.APIManager];
     [self.navigationController presentViewController:contactView animated:YES completion:nil];
-    //[self addDummyConversation];
 }
 - (void)addDummyConversation
 {
-    LYRConversation *dummyConv = [LYRConversation conversationWithParticipants:[NSArray array]];
-    [self.APIManager loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
-        [self.layerClient addParticipants:[[contacts allObjects] objectAtIndex:0] toConversation:dummyConv error:nil];
+    [self.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
+        NSDictionary *userID = [[contacts objectAtIndex:0] objectForKey:@"id"];
+        NSLog(@"USER_ID: %@", userID);
+        LYRConversation *dummyConv = [LYRConversation conversationWithParticipants:@[userID]];
+        NSLog(@"Created conversation!");
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"json"];
+        NSData *myData = [NSData dataWithContentsOfFile:filePath];
+        NSDictionary *lyrics = [NSJSONSerialization JSONObjectWithData:myData options:NSJSONReadingMutableContainers error:nil];
+        OTChatView *chatView = [[OTChatView alloc] initWithConversation:dummyConv lyrics:lyrics];
+        [self.navigationController presentViewController:chatView animated:YES completion:nil];
     }];
     
 }
