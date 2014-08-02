@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "LSAPIManager.h"
+#import <LayerKit/LayerKit.h>
 
 @interface LSAuthenticatedViewController : UIViewController
 
 @property (nonatomic, strong) LSAPIManager *APIManager;
 
+@property (nonatomic, strong) LYRClient *layerClient;
 @end

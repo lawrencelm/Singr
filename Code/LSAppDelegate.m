@@ -175,6 +175,7 @@ extern void LYRSetLogLevelFromEnvironment();
     LSAuthenticatedViewController *authenticatedViewController = [[LSAuthenticatedViewController alloc] init];
     authenticatedViewController.APIManager = self.applicationController.APIManager;
     
+    authenticatedViewController.layerClient = self.applicationController.layerClient;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:authenticatedViewController];
     navController.navigationBar.barTintColor = LSLighGrayColor();
     navController.navigationBar.tintColor = LSBlueColor();
