@@ -205,7 +205,7 @@ NSString *const LSUserDidDeauthenticateNotification = @"LSUserDidDeauthenticateN
     if (completion) completion(YES, nil);
 }
 
-- (void)loadContactsWithCompletion:(void(^)(NSSet *contacts, NSError *error))completion
+- (void)loadContactsWithCompletion:(void(^)(NSArray *contacts, NSError *error))completion
 {
     NSURL *URL = [NSURL URLWithString:@"users.json" relativeToURL:self.baseURL];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
@@ -233,15 +233,10 @@ NSString *const LSUserDidDeauthenticateNotification = @"LSUserDidDeauthenticateN
         }
         
         NSLog(@"Loaded user representations: %@", userRepresentations);
-        NSMutableSet *contacts = [NSMutableSet new];
-        for (NSDictionary *representation in userRepresentations) {
-            LSUser *user = [LSUser userFromDictionaryRepresentation:representation];
-            [contacts addObject:user];
-        }
         
         if (completion) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion(contacts, nil);
+                completion(userRepresentations, nil);
             });
         }
     }] resume];

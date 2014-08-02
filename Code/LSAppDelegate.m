@@ -152,17 +152,8 @@ extern void LYRSetLogLevelFromEnvironment();
 - (void)loadContacts
 {
     NSLog(@"Loading contacts...");
-    [self.applicationController.APIManager loadContactsWithCompletion:^(NSSet *contacts, NSError *error) {
+    [self.applicationController.APIManager loadContactsWithCompletion:^(NSArray *contacts, NSError *error) {
         if (contacts) {
-            NSError *persistenceError = nil;
-            BOOL success = [self.applicationController.persistenceManager persistUsers:contacts error:&persistenceError];
-            if (success) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"contactsPersited" object:nil];
-                NSLog(@"Persisted contacts successfully: %@", contacts);
-            } else {
-                NSLog(@"Failed persisting contacts: %@. Error: %@", contacts, persistenceError);
-                LSAlertWithError(persistenceError);
-            }
         } else {
             NSLog(@"Failed loading contacts: %@", error);
             LSAlertWithError(error);

@@ -43,7 +43,7 @@ extern NSString *const LSUserDidDeauthenticateNotification;
 /// @name Accessing Contacts
 ///-------------------------
 
-- (void)loadContactsWithCompletion:(void(^)(NSSet *contacts, NSError *error))completion;
+- (void)loadContactsWithCompletion:(void(^)(NSArray *contacts, NSError *error))completion;
 
 ///--------------------------
 /// @name Delete All Contacts
