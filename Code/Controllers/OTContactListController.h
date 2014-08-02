@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface OTContactListController : UITableViewController
-@property (nonatomic, weak) *NSSet contactList;
+@property (nonatomic, weak) NSSet *contactList;
 @end
