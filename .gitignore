@@ -1,0 +1,10 @@
+
+*.xcscheme
+
+*.plist
+
+*.xcuserstate
+
+*.xccheckout
+
+LayerSample.xcworkspace/xcshareddata/LayerSample.xccheckout
